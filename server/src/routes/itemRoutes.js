@@ -7,8 +7,8 @@ const {
     createItem,
     updateItem,
     deleteItem
-} = require('../controllers/itemCoutroller');
-const {restrectTo } = require('../controllers/authController');
+} = require('../controllers/v1/itemController');
+const {restrectTo } = require('../controllers/v1/authController');
 //Get all items
 router.get('/',  getAllItems);
 

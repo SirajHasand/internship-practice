@@ -1,8 +1,8 @@
-const { createUser, getUserByEmail, getUserById, changedPasswordAfter } = require('../models/UserModel');
-const catchAsync = require('../utils/catchAsync')
+const { createUser, getUserByEmail, getUserById, changedPasswordAfter } = require('../../models/UserModel');
+const catchAsync = require('../../utils/catchAsync')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const AppError = require('../utils/AppError');
+const AppError = require('../../utils/AppError');
 const { promisify } = require('util');
 
 

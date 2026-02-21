@@ -43,8 +43,8 @@ app.get('/api/db-test',async(req,res) =>{
 });
 
 //routes for items
-app.use('/api/items',itemsRoutes);
-app.use('/api/auth',authRoutes);
+app.use('/api/v1/items',itemsRoutes);
+app.use('/api/v1/auth',authRoutes);
 
 
 app.all('*', (req,res, next)=>{
