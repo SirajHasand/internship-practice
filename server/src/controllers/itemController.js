@@ -1,6 +1,6 @@
-const { pool } = require('../../config/db');
-const catchAsync = require('../../utils/catchAsync')
-const AppError = require('../../utils/AppError');
+const { pool } = require('../config/db');
+const catchAsync = require('../utils/catchAsync')
+const AppError = require('../utils/AppError');
 
 // Get all items
 const getAllItems = async (req, res) => {
