@@ -49,7 +49,8 @@ app.use('/api/v1/auth',authRoutes);
 
 
 //routes for version 2
-// app.use('/api/v2/review',itemReviewRoutes);
+app.use('/api/v2/items',itemsRoutes);
+app.use('/api/v2/auth',authRoutes);
 app.use('/api/v2/reviews', itemReviewRoutes);
 
 
