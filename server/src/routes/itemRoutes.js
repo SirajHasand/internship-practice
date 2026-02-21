@@ -8,9 +8,9 @@ const {
     updateItem,
     deleteItem
 } = require('../controllers/itemCoutroller');
-const {restrectTo } = require('../controllers/authController');
+const { protect, restrectTo } = require('../controllers/authController');
 //Get all items
-router.get('/',  getAllItems);
+router.get('/', protect, getAllItems);
 
 //Get single item
 router.get('/:id',getItemById);
@@ -22,6 +22,6 @@ router.put('/:id',updateItem);
 router.post('/',createItem);
 
 //delte all items
-router.delete('/:id',restrectTo('admin'), deleteItem);
+router.delete('/:id', protect,restrectTo('admin'), deleteItem);
 
 module.exports = router;
