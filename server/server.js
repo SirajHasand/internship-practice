@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const itemsRoutes = require('./src/routes/v1/itemRoutes')
 const authRoutes = require('./src/routes/v1/authRoutes')
+const itemReviewRoutes = require('./src/routes/v2/itemReviewRoutes');
 require('dotenv').config();
 const pool = require('./src/config/db');
 const app = express();
@@ -42,9 +43,15 @@ app.get('/api/db-test',async(req,res) =>{
   }
 });
 
-//routes for items
+//routes for items verion 1
 app.use('/api/v1/items',itemsRoutes);
 app.use('/api/v1/auth',authRoutes);
+
+
+//routes for version 2
+// app.use('/api/v2/review',itemReviewRoutes);
+app.use('/api/v2/reviews', itemReviewRoutes);
+
 
 
 app.all('*', (req,res, next)=>{

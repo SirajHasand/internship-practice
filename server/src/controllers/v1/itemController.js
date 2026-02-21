@@ -19,7 +19,6 @@ const getAllItems = async (req, res) => {
 const getItemById = async (req, res) => {
     try {
         const id = parseInt(req.params.id);
-
         const result = await pool.query(
             'SELECT * FROM items WHERE id = $1',
             [id]
@@ -53,10 +52,7 @@ const createItem = catchAsync(async (req, res) => {
         );
 
         res.status(201).json(result.rows[0]);
-//     } catch (error) {
-//         console.error('Error creating item', error);
-//         res.status(500).json({ error: 'server error' });
-//     }
+
 });
 
 // Update item
