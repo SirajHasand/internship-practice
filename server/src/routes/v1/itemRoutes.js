@@ -8,9 +8,9 @@ const {
     updateItem,
     deleteItem
 } = require('../../controllers/v1/itemController');
-const {restrectTo } = require('../../controllers/v1/authController');
+const {restrectTo, protect } = require('../../controllers/v1/authController');
 //Get all items
-router.get('/',  getAllItems);
+router.get('/',protect, getAllItems);
 
 //Get single item
 router.get('/:id',getItemById);
