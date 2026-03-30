@@ -64,6 +64,7 @@ const registerUser = catchAsync( async (req, res, next) => {
             }       
         });
     });
+    // Protect middleware, to protect routes that require authentication
 
 const  protect = catchAsync(async (req, res, next) => {
     // 1) Getting token and check of it's there
